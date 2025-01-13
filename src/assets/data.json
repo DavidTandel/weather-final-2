@@ -1,0 +1,265 @@
+{
+  "items": [
+    {
+      "update_timestamp": "2019-12-24T06:02:12+08:00",
+      "timestamp": "2019-12-24T05:31:00+08:00",
+      "forecasts": [
+        {
+          "temperature": {
+            "low": 24,
+            "high": 34
+          },
+          "date": "2019-12-25",
+          "forecast": "Afternoon thundery showers.",
+          "relative_humidity": {
+            "low": 55,
+            "high": 95
+          },
+          "wind": {
+            "speed": {
+              "low": 15,
+              "high": 25
+            },
+            "direction": "NNE"
+          },
+          "timestamp": "2019-12-25T00:00:00+08:00"
+        },
+        {
+          "temperature": {
+            "low": 24,
+            "high": 34
+          },
+          "date": "2019-12-26",
+          "forecast": "Afternoon thundery showers.",
+          "relative_humidity": {
+            "low": 55,
+            "high": 95
+          },
+          "wind": {
+            "speed": {
+              "low": 10,
+              "high": 20
+            },
+            "direction": "NNE"
+          },
+          "timestamp": "2019-12-26T00:00:00+08:00"
+        },
+        {
+          "temperature": {
+            "low": 24,
+            "high": 34
+          },
+          "date": "2019-12-27",
+          "forecast": "Afternoon thundery showers.",
+          "relative_humidity": {
+            "low": 55,
+            "high": 95
+          },
+          "wind": {
+            "speed": {
+              "low": 10,
+              "high": 25
+            },
+            "direction": "NNW"
+          },
+          "timestamp": "2019-12-27T00:00:00+08:00"
+        },
+        {
+          "temperature": {
+            "low": 24,
+            "high": 34
+          },
+          "date": "2019-12-28",
+          "forecast": "Afternoon thundery showers.",
+          "relative_humidity": {
+            "low": 55,
+            "high": 95
+          },
+          "wind": {
+            "speed": {
+              "low": 10,
+              "high": 25
+            },
+            "direction": "NNW"
+          },
+          "timestamp": "2019-12-28T00:00:00+08:00"
+        }
+      ]
+    },
+    {
+      "update_timestamp": "2019-12-24T10:32:12+08:00",
+      "timestamp": "2019-12-24T09:55:00+08:00",
+      "forecasts": [
+        {
+          "temperature": {
+            "low": 24,
+            "high": 34
+          },
+          "date": "2019-12-25",
+          "forecast": "Afternoon thundery showers.",
+          "relative_humidity": {
+            "low": 55,
+            "high": 95
+          },
+          "wind": {
+            "speed": {
+              "low": 15,
+              "high": 25
+            },
+            "direction": "NNE"
+          },
+          "timestamp": "2019-12-25T00:00:00+08:00"
+        },
+        {
+          "temperature": {
+            "low": 24,
+            "high": 34
+          },
+          "date": "2019-12-26",
+          "forecast": "Afternoon thundery showers.",
+          "relative_humidity": {
+            "low": 55,
+            "high": 95
+          },
+          "wind": {
+            "speed": {
+              "low": 10,
+              "high": 20
+            },
+            "direction": "NNE"
+          },
+          "timestamp": "2019-12-26T00:00:00+08:00"
+        },
+        {
+          "temperature": {
+            "low": 24,
+            "high": 34
+          },
+          "date": "2019-12-27",
+          "forecast": "Afternoon thundery showers.",
+          "relative_humidity": {
+            "low": 55,
+            "high": 95
+          },
+          "wind": {
+            "speed": {
+              "low": 10,
+              "high": 25
+            },
+            "direction": "NNW"
+          },
+          "timestamp": "2019-12-27T00:00:00+08:00"
+        },
+        {
+          "temperature": {
+            "low": 24,
+            "high": 34
+          },
+          "date": "2019-12-28",
+          "forecast": "Fair and occasionally windy.",
+          "relative_humidity": {
+            "low": 55,
+            "high": 95
+          },
+          "wind": {
+            "speed": {
+              "low": 15,
+              "high": 25
+            },
+            "direction": "NNW"
+          },
+          "timestamp": "2019-12-28T00:00:00+08:00"
+        }
+      ]
+    },
+    {
+      "update_timestamp": "2019-12-24T17:32:12+08:00",
+      "timestamp": "2019-12-24T17:19:00+08:00",
+      "forecasts": [
+        {
+          "temperature": {
+            "low": 24,
+            "high": 34
+          },
+          "date": "2019-12-25",
+          "forecast": "Afternoon thundery showers.",
+          "relative_humidity": {
+            "low": 55,
+            "high": 95
+          },
+          "wind": {
+            "speed": {
+              "low": 15,
+              "high": 25
+            },
+            "direction": "NNE"
+          },
+          "timestamp": "2019-12-25T00:00:00+08:00"
+        },
+        {
+          "temperature": {
+            "low": 24,
+            "high": 34
+          },
+          "date": "2019-12-26",
+          "forecast": "Afternoon thundery showers.",
+          "relative_humidity": {
+            "low": 55,
+            "high": 95
+          },
+          "wind": {
+            "speed": {
+              "low": 10,
+              "high": 20
+            },
+            "direction": "NNE"
+          },
+          "timestamp": "2019-12-26T00:00:00+08:00"
+        },
+        {
+          "temperature": {
+            "low": 24,
+            "high": 34
+          },
+          "date": "2019-12-27",
+          "forecast": "Afternoon thundery showers.",
+          "relative_humidity": {
+            "low": 55,
+            "high": 95
+          },
+          "wind": {
+            "speed": {
+              "low": 10,
+              "high": 25
+            },
+            "direction": "NNW"
+          },
+          "timestamp": "2019-12-27T00:00:00+08:00"
+        },
+        {
+          "temperature": {
+            "low": 24,
+            "high": 34
+          },
+          "date": "2019-12-28",
+          "forecast": "Fair and occasionally windy.",
+          "relative_humidity": {
+            "low": 55,
+            "high": 95
+          },
+          "wind": {
+            "speed": {
+              "low": 15,
+              "high": 25
+            },
+            "direction": "NNW"
+          },
+          "timestamp": "2019-12-28T00:00:00+08:00"
+        }
+      ]
+    }
+  ],
+  "api_info": {
+    "status": "healthy"
+  }
+}

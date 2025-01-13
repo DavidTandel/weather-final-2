@@ -1,0 +1,28 @@
+/* Ensure full-width for smaller devices */
+plotly-plot {
+    /* width: 100%; */
+    height: auto;
+  }
+  
+  /* Adjust the grid table for smaller screens */
+  ag-grid-angular {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  
+  /* Responsive padding and layout */
+  @media (max-width: 768px) {
+    div {
+      padding: 10px;
+    }
+    
+    label, input, button {
+      font-size: 14px;
+    }
+    
+    ag-grid-angular {
+      min-height: 200px;
+    }
+  }
+  
