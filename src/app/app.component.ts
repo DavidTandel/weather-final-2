@@ -1,8 +1,7 @@
 import { Component, Inject, inject ,PLATFORM_ID } from '@angular/core';
 import { WeatherService } from './weather.service';
-import { weather, WeatherItem } from '../model/weather.type';
+import { weather } from '../model/weather.type';
 import { catchError } from 'rxjs';
-import data  from '../assets/data.json'
 import  {AgGridModule}  from 'ag-grid-angular';
 import { ColDef } from 'ag-grid-community';
 import { isPlatformBrowser } from '@angular/common';
@@ -10,10 +9,8 @@ import { ModuleRegistry } from 'ag-grid-community';
 import { ClientSideRowModelModule } from 'ag-grid-community';
 import { PlotlyModule } from 'angular-plotly.js';
 import * as PlotlyJS from 'plotly.js-basic-dist';
-import { waitForAsync } from '@angular/core/testing';
 
 PlotlyModule.plotlyjs = PlotlyJS;
-
 // Register the module
 ModuleRegistry.registerModules([ClientSideRowModelModule]);
 @Component({
@@ -26,271 +23,6 @@ ModuleRegistry.registerModules([ClientSideRowModelModule]);
 export class AppComponent{
   weatherService = inject(WeatherService);
   weatherData!: weather;
-  // weatherData = {
-  //     "items": [
-  //       {
-  //         "update_timestamp": "2019-12-24T06:02:12+08:00",
-  //         "timestamp": "2019-12-24T05:31:00+08:00",
-  //         "forecasts": [
-  //           {
-  //             "temperature": {
-  //               "low": 24,
-  //               "high": 34
-  //             },
-  //             "date": "2019-12-25",
-  //             "forecast": "Afternoon thundery showers.",
-  //             "relative_humidity": {
-  //               "low": 55,
-  //               "high": 95
-  //             },
-  //             "wind": {
-  //               "speed": {
-  //                 "low": 15,
-  //                 "high": 25
-  //               },
-  //               "direction": "NNE"
-  //             },
-  //             "timestamp": "2019-12-25T00:00:00+08:00"
-  //           },
-  //           {
-  //             "temperature": {
-  //               "low": 24,
-  //               "high": 34
-  //             },
-  //             "date": "2019-12-26",
-  //             "forecast": "Afternoon thundery showers.",
-  //             "relative_humidity": {
-  //               "low": 55,
-  //               "high": 95
-  //             },
-  //             "wind": {
-  //               "speed": {
-  //                 "low": 10,
-  //                 "high": 20
-  //               },
-  //               "direction": "NNE"
-  //             },
-  //             "timestamp": "2019-12-26T00:00:00+08:00"
-  //           },
-  //           {
-  //             "temperature": {
-  //               "low": 24,
-  //               "high": 34
-  //             },
-  //             "date": "2019-12-27",
-  //             "forecast": "Afternoon thundery showers.",
-  //             "relative_humidity": {
-  //               "low": 55,
-  //               "high": 95
-  //             },
-  //             "wind": {
-  //               "speed": {
-  //                 "low": 10,
-  //                 "high": 25
-  //               },
-  //               "direction": "NNW"
-  //             },
-  //             "timestamp": "2019-12-27T00:00:00+08:00"
-  //           },
-  //           {
-  //             "temperature": {
-  //               "low": 24,
-  //               "high": 34
-  //             },
-  //             "date": "2019-12-28",
-  //             "forecast": "Afternoon thundery showers.",
-  //             "relative_humidity": {
-  //               "low": 55,
-  //               "high": 95
-  //             },
-  //             "wind": {
-  //               "speed": {
-  //                 "low": 10,
-  //                 "high": 25
-  //               },
-  //               "direction": "NNW"
-  //             },
-  //             "timestamp": "2019-12-28T00:00:00+08:00"
-  //           }
-  //         ]
-  //       },
-  //       {
-  //         "update_timestamp": "2019-12-24T10:32:12+08:00",
-  //         "timestamp": "2019-12-24T09:55:00+08:00",
-  //         "forecasts": [
-  //           {
-  //             "temperature": {
-  //               "low": 24,
-  //               "high": 34
-  //             },
-  //             "date": "2019-12-25",
-  //             "forecast": "Afternoon thundery showers.",
-  //             "relative_humidity": {
-  //               "low": 55,
-  //               "high": 95
-  //             },
-  //             "wind": {
-  //               "speed": {
-  //                 "low": 15,
-  //                 "high": 25
-  //               },
-  //               "direction": "NNE"
-  //             },
-  //             "timestamp": "2019-12-25T00:00:00+08:00"
-  //           },
-  //           {
-  //             "temperature": {
-  //               "low": 24,
-  //               "high": 34
-  //             },
-  //             "date": "2019-12-26",
-  //             "forecast": "Afternoon thundery showers.",
-  //             "relative_humidity": {
-  //               "low": 55,
-  //               "high": 95
-  //             },
-  //             "wind": {
-  //               "speed": {
-  //                 "low": 10,
-  //                 "high": 20
-  //               },
-  //               "direction": "NNE"
-  //             },
-  //             "timestamp": "2019-12-26T00:00:00+08:00"
-  //           },
-  //           {
-  //             "temperature": {
-  //               "low": 24,
-  //               "high": 34
-  //             },
-  //             "date": "2019-12-27",
-  //             "forecast": "Afternoon thundery showers.",
-  //             "relative_humidity": {
-  //               "low": 55,
-  //               "high": 95
-  //             },
-  //             "wind": {
-  //               "speed": {
-  //                 "low": 10,
-  //                 "high": 25
-  //               },
-  //               "direction": "NNW"
-  //             },
-  //             "timestamp": "2019-12-27T00:00:00+08:00"
-  //           },
-  //           {
-  //             "temperature": {
-  //               "low": 24,
-  //               "high": 34
-  //             },
-  //             "date": "2019-12-28",
-  //             "forecast": "Fair and occasionally windy.",
-  //             "relative_humidity": {
-  //               "low": 55,
-  //               "high": 95
-  //             },
-  //             "wind": {
-  //               "speed": {
-  //                 "low": 15,
-  //                 "high": 25
-  //               },
-  //               "direction": "NNW"
-  //             },
-  //             "timestamp": "2019-12-28T00:00:00+08:00"
-  //           }
-  //         ]
-  //       },
-  //       {
-  //         "update_timestamp": "2019-12-24T17:32:12+08:00",
-  //         "timestamp": "2019-12-24T17:19:00+08:00",
-  //         "forecasts": [
-  //           {
-  //             "temperature": {
-  //               "low": 24,
-  //               "high": 34
-  //             },
-  //             "date": "2019-12-25",
-  //             "forecast": "Afternoon thundery showers.",
-  //             "relative_humidity": {
-  //               "low": 55,
-  //               "high": 95
-  //             },
-  //             "wind": {
-  //               "speed": {
-  //                 "low": 15,
-  //                 "high": 25
-  //               },
-  //               "direction": "NNE"
-  //             },
-  //             "timestamp": "2019-12-25T00:00:00+08:00"
-  //           },
-  //           {
-  //             "temperature": {
-  //               "low": 24,
-  //               "high": 34
-  //             },
-  //             "date": "2019-12-26",
-  //             "forecast": "Afternoon thundery showers.",
-  //             "relative_humidity": {
-  //               "low": 55,
-  //               "high": 95
-  //             },
-  //             "wind": {
-  //               "speed": {
-  //                 "low": 10,
-  //                 "high": 20
-  //               },
-  //               "direction": "NNE"
-  //             },
-  //             "timestamp": "2019-12-26T00:00:00+08:00"
-  //           },
-  //           {
-  //             "temperature": {
-  //               "low": 24,
-  //               "high": 34
-  //             },
-  //             "date": "2019-12-27",
-  //             "forecast": "Afternoon thundery showers.",
-  //             "relative_humidity": {
-  //               "low": 55,
-  //               "high": 95
-  //             },
-  //             "wind": {
-  //               "speed": {
-  //                 "low": 10,
-  //                 "high": 25
-  //               },
-  //               "direction": "NNW"
-  //             },
-  //             "timestamp": "2019-12-27T00:00:00+08:00"
-  //           },
-  //           {
-  //             "temperature": {
-  //               "low": 24,
-  //               "high": 34
-  //             },
-  //             "date": "2019-12-28",
-  //             "forecast": "Fair and occasionally windy.",
-  //             "relative_humidity": {
-  //               "low": 55,
-  //               "high": 95
-  //             },
-  //             "wind": {
-  //               "speed": {
-  //                 "low": 15,
-  //                 "high": 25
-  //               },
-  //               "direction": "NNW"
-  //             },
-  //             "timestamp": "2019-12-28T00:00:00+08:00"
-  //           }
-  //         ]
-  //       }
-  //     ],
-  //     "api_info": {
-  //       "status": "healthy"
-  //     }
-  //   };
   rowData: any[] = [];
   selectedDate: string = '25-12-2019'; // User-selected date in dd-mm-yyyy format
 
@@ -331,8 +63,6 @@ export class AppComponent{
       console.error('Error loading Plotly:', error);
     });
   }
-
-
 
   updateRowDataByDate(selectedDate: string): void {
     const items = this.weatherData.items;
@@ -382,8 +112,7 @@ export class AppComponent{
     }
   }
   
-    isBrowser: boolean;
-
+  isBrowser: boolean;
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.isBrowser = isPlatformBrowser(this.platformId); // Check if running in the browser
   }
@@ -425,7 +154,4 @@ export class AppComponent{
       yaxis: { title: 'Value' }
     };
   }
-
-  
 }
-
