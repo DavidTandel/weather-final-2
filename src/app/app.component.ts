@@ -2,8 +2,8 @@ import { Component, Inject, inject ,PLATFORM_ID } from '@angular/core';
 import { WeatherService } from './weather.service';
 import { weather } from '../model/weather.type';
 import { catchError } from 'rxjs';
-import  {AgGridModule}  from 'ag-grid-angular';
-import { ColDef } from 'ag-grid-community';
+import { AgGridModule }  from 'ag-grid-angular';
+// import { ColDef } from 'ag-grid-community';
 import { isPlatformBrowser } from '@angular/common';
 import { ModuleRegistry } from 'ag-grid-community';
 import { ClientSideRowModelModule } from 'ag-grid-community';
@@ -24,7 +24,7 @@ export class AppComponent{
   weatherService = inject(WeatherService);
   weatherData!: weather;
   rowData: any[] = [];
-  selectedDate: string = '25-12-2019'; // User-selected date in dd-mm-yyyy format
+  selectedDate: string = '25-12-2019'; // User-selected date in dd-mm-yyyy format(default selected '25-12-2019')
 
   colDefs = [
     { field: 'Date', headerName: 'Date' },
@@ -49,18 +49,10 @@ export class AppComponent{
     ).subscribe((data)=>{
       this.weatherData = data;
       if (data) {
-        console.log(this.weatherData);
-        console.log("David");
+        console.log(this.weatherData);//checking if Data fetched or not
         this.updateRowDataByDate(this.selectedDate);
         this.generateChart();
       }
-    });
-
-    import('plotly.js-basic-dist').then(PlotlyJS => {
-      PlotlyModule.plotlyjs = PlotlyJS;
-      this.generateChart();
-    }).catch(error => {
-      console.error('Error loading Plotly:', error);
     });
   }
 
