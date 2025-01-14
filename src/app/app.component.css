@@ -17,4 +17,27 @@ ag-grid-angular {
   label, input, button {
     font-size: 14px;
   }
+
+  .date{
+    align-items: center;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 578px) {
+  plotly-plot{
+    scale: 50%;
+  }
+  div {
+    padding: 5px;
+  }
+  
+  label, input, button {
+    font-size: 11px;
+  }
+
+  .date{
+    align-items: center;
+    font-size: 11px;
+  }
 }

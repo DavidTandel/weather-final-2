@@ -4,8 +4,9 @@
     <plotly-plot [data]="chartData" [layout]="chartLayout"></plotly-plot>
   </div>
 
-  <div style="padding: 20px;display: flex;justify-content: center;">
-    <label for="forecastDate">Enter Date: </label>
+  <div class="date" style="padding: 20px;display: flex;justify-content: center;">
+    <!-- <label for="forecastDate">Enter Date: </label> -->
+     Enter Date:
     <input type="date" id="forecastDate" value="26-12-2019" #dateInput />
     <button (click)="updateRowDataByDate(dateInput.value)">Submit</button>
   </div>
@@ -13,11 +14,11 @@
   <ag-grid-angular 
     class = "ag-theme-alpine-dark"
     style="height: 130px;
-    width:1042px;
+    width:1002px;
     display: grid;
     padding: 10px;
     background-color: #aaa;
-    background: #aaa;
+    background: aliceblue;
     display: block;
     justify-self: center;"
     [rowData] = "rowData"
